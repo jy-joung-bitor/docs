@@ -140,7 +140,8 @@
     "Valkey",
     "Nixpacks",
     "Buildpacks",
-    "Sevalla's"
+    "Sevalla's",
+    "Dataguide"
   ],
   "patterns": [
     {

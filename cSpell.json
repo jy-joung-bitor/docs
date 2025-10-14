@@ -112,7 +112,8 @@
     "nonrepeatable",
     "OLAP",
     "OLTP",
-    "Nonrepeatable"
+    "Nonrepeatable",
+    "Dataguide"
   ],
   "ignoreWords": [
     "Aiven",

@@ -98,7 +98,21 @@
     "Tabnine",
     "windsurfrules",
     "betterauth",
-    "Turbopack"
+    "Turbopack",
+    "BCNF",
+    "HTAP",
+    "MVCC",
+    "OLAP/OLTP",
+    "RDBMS",
+    "Superkey",
+    "multivalued",
+    "Boyce",
+    "Codd",
+    "Multiversion",
+    "nonrepeatable",
+    "OLAP",
+    "OLTP",
+    "Nonrepeatable"
   ],
   "ignoreWords": [
     "Aiven",

@@ -2,7 +2,6 @@
 title: 'Glossary of common database terminology'
 metaTitle: "Database glossary | Prisma's Data Guide"
 metaDescription: 'Database terminology can be difficult to understand.  This glossary was designed to help you learn important terminology by providing definitions and context in one place.'
-authors: ['justinellingwood']
 ---
 
 ## Introduction
@@ -20,7 +19,8 @@ This glossary is a work in progress and a living document. We intend to update i
 
 #### 2NF
 2NF, or second normal form, describes a type of database normalization that:
-  1) satisfies the requirements of 1NF, 2) has no values that are tied directly
+  1) satisfies the requirements of 1NF,
+  2) has no values that are tied directly
   to a subset of a candidate key. In other words, a relation is in 2NF if it is
   in 1NF and all of the non-candidate values are dependent on the composite key
   in whole, not just a portion of the candidate key. For example, a `book` table
@@ -30,8 +30,9 @@ This glossary is a work in progress and a living document. We intend to update i
   inconsistencies if the values get out of sync.
 
 #### 3NF
-3NF, or third normal form, describes a type of database normalization that: 1)
-  satisfies the requirements of 2NF, 2) each non-key attribute is not
+3NF, or third normal form, describes a type of database normalization that:
+  1) satisfies the requirements of 2NF,
+  2) each non-key attribute is not
   transitively dependent on a key attribute. For example, if a `user` table has
   a `user_id` column as a primary key, a `user_city` column, and a `user_state`
   column, it would not be in 3NF because `user_state` is transitively dependent
@@ -40,7 +41,8 @@ This glossary is a work in progress and a living document. We intend to update i
 
 #### 4NF
 4NF, or fourth normal form, describes a type of database normalization that:
-  1) satisfies the requirements of BCNF, 2) for every non-trivial multivalued
+  1) satisfies the requirements of BCNF,
+  2) for every non-trivial multivalued
   dependency, the determining attribute in the dependency is either a candidate
   key or a superset of it. In other words, if a field has multiple dependent
   fields that are independent from one another, it can lead to redundancies that
@@ -134,7 +136,9 @@ BASE — an acronym created from the words Basically Available, Soft-state, and
 
 #### BCNF
 BCNF, or Boyce-Codd normal form, describes a type of database normalization
-  that: 1) satisfies the requirements of 3NF, 2) where the determining attribute
+  that:
+  1) satisfies the requirements of 3NF,
+  2) where the determining attribute
   in each dependency (the attribute that dictates another attribute's value) is
   either a _superset_ of the dependent attribute, is a candidate key, or is a
   superset of a candidate key.
@@ -387,7 +391,6 @@ In the broadest sense, data are facts or pieces of information. They are
   and activity and it can gain meaning and value as it is collected, analyzed,
   and contextualized.
 
-
 #### Data definition language (DDL)
 A data definition language, or DDL, is a set of commands or actions that are
   used to define database structures and objects. They are a key component to
@@ -606,8 +609,8 @@ In the context of caches, eviction is a process where a piece of data is
   invalidated by an operation or it can occur automatically as a result of
   policies designed to remove the data that is the oldest or least used.
 
-#### Expand and contract patter>
-  The expand and contract pattern is a strategy for introducing new changes to a
+#### Expand and contract pattern
+The expand and contract pattern is a strategy for introducing new changes to a
   database schema without affecting existing applications. It works by
   introducing changes in carefully controlled stages by first adding new or
   changed structures alongside existing structures and then expanding the
@@ -894,8 +897,8 @@ Monolithic architecture is a term used to refer to a traditional application.
   suffer from inflexibility with scaling and availability as the entire
   application must be scaled up and down as a single unit.
 
-#### Multiversion concurrency control (MVCC>
-  Multiversion concurrency control, or MVCC, is a strategy for allowing
+#### Multiversion concurrency control (MVCC)
+Multiversion concurrency control, or MVCC, is a strategy for allowing
   concurrent access to data within database systems as an alternative to row and
   table locking. MVCC works by taking "snapshots" that represent a consistent
   data state for each user accessing a set of data. The goal of MVCC is to offer
@@ -997,8 +1000,8 @@ An ORM, or Object Relational Mapper, is a database tool designed to translate
   are usually not a perfect abstraction and can lead to issues where the
   different models conflict on how to represent data.
 
-#### Object relational impedance mismatc>
-  Object relational impedance mismatch is a term used for the general tension
+#### Object relational impedance mismatch
+Object relational impedance mismatch is a term used for the general tension
   that exists between the relational model of data used by many databases and
   the object-oriented view of data used in many applications. The impedance
   mismatch refers to the differences between the two models that makes faithful
@@ -1007,8 +1010,8 @@ An ORM, or Object Relational Mapper, is a database tool designed to translate
   the space including problems representing inheritance, encapsulation, type
   differences, different consistency guarantees, and more.
 
-#### Optimistic concurrency contro>
-  Optimistic concurrency control, sometimes referred to as OCC, is a strategy
+#### Optimistic concurrency control (OCC)
+Optimistic concurrency control, sometimes referred to as OCC, is a strategy
   used by database systems to handle conflicting concurrent operations.
   Optimistic concurrency control assumes that concurrent transactions will
   likely not interfere with each other and allows them to proceed. If a conflict
@@ -1056,8 +1059,8 @@ Persistent storage refers to any storage medium that is able to maintain data
   systems as needed to take advantage of and balance the disadvantages of both
   types.
 
-#### Pessimistic concurrency contro>
-  Pessimistic concurrency control, or PCC, is a strategy used by database
+#### Pessimistic concurrency control (PCC)
+Pessimistic concurrency control, or PCC, is a strategy used by database
   systems to handle conflicting concurrent operations. In contrast to optimistic
   concurrency control, pessimistic concurrency control short circuits
   transactions as soon as the possibility of a conflict arises. This strategy is
@@ -1149,8 +1152,8 @@ The Raft consensus algorithm is an algorithm designed to coordinate
   algorithm to implement than alternatives like{' '}
   <a href="https://en.wikipedia.org/wiki/Paxos_(computer_science)">Paxos</a>.
 
-#### Read committed isolation leve>
-  The read committed isolation level is a transaction isolation level for
+#### Read committed isolation level
+The read committed isolation level is a transaction isolation level for
   relational database systems that offers a minimal amount of isolation
   guarantees. At the read committed level, transactions are guaranteed to be
   free of dirty reads, a phenomena where transactions can read data from other
@@ -1171,10 +1174,10 @@ Read-through caching is a caching strategy where the cache is deployed in the
   returned immediately. It the cache request misses, the cache fetches the data
   from the backing database in order to return the items to the client and add
   it to the cache for future queries. In this architecture, the application
-  continues to send all write queries directly to the backing database.
+  continues to send all write queries directly to  the backing database.
 
-#### Read uncommitted isolation leve>
-  The read uncommitted isolation level is a transaction isolation level for
+#### Read uncommitted isolation level
+The read uncommitted isolation level is a transaction isolation level for
   relational database systems that fundamentally offers no isolation.
   Transactions performed using the read uncommitted isolation level can suffer
   from dirty reads, nonrepeatable reads, phantom reads, and serialization
@@ -1214,14 +1217,14 @@ A relational database is a database model that organizes data items according
   Query Language) to interact with the database system as it allows users to
   express complex queries in an ad-hoc manner.
 
-#### Relational database management system (RDBMS>
-  A relational database management system, also known as an RDBMS, is database
+#### Relational database management system (RDBMS)
+A relational database management system, also known as an RDBMS, is database
   software that manages relational databases. In practice, the term RDBMS is
   often used interchangeably with relational database, though technically
   speaking, an RDBMS manages one or more relational database.
 
-#### Repeatable read isolation leve>
-  The repeatable read isolation level is a transaction isolation level for
+#### Repeatable read isolation level
+The repeatable read isolation level is a transaction isolation level for
   relational database systems that offers better isolation than read committed
   level, but not as much isolation of the serializable level. At the repeatable
   read isolation level, dirty reads and nonrepeatable reads are both prevented.
@@ -1251,10 +1254,10 @@ A right join is a join operation for relational databases where all of the
   from both tables where the column values matched and will additionally contain
   all of the unmatched rows from the second, or right, table. For these rows,
   the columns associated with the first, or left, table will be padded with
-  `NULL` values to indicate that no matching row was found.
+  `NULL` values  to indicate that no matching row was found.
 
-#### Role-based access control (RBAC>
-  Role-based access control, also known as RBAC, is a security strategy that
+#### Role-based access control (RBA)
+Role-based access control, also known as RBAC, is a security strategy that
   restricts the operations permitted to a user based on their assigned roles.
   Permissions on object and privileges to execute actions are assigned to roles,
   labels that make managing access easier. To grant the capabilities associated
@@ -1337,8 +1340,8 @@ A database schema is a structure describing how data should be organized
   it is implemented as a child of a database object that acts as a namespace for
   other database objects.
 
-#### Serializable isolation leve>
-  The serializable isolation level is a transaction isolation level for
+#### Serializable isolation level
+The serializable isolation level is a transaction isolation level for
   relational database systems that offers the strictest isolation guarantees. At
   the serializable level, dirty reads, nonrepeatable reads, phantom reads, and
   serialization anomalies are all prevented. The database system does this by
